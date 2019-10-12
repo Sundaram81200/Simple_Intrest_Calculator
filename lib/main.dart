@@ -8,7 +8,7 @@ void main() {
     theme: ThemeData(
       brightness: Brightness.light,
       primaryColor: Colors.lightBlueAccent,
-      accentColor: Colors.lightBlue,
+      accentColor: Colors.lightBlueAccent,
     ),
   ));
 }
