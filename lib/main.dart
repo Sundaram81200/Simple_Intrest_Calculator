@@ -24,7 +24,7 @@ class _SIFormState extends State<SIForm> {
   var _currencies = ['Ruppes', 'Dollars', 'Pounds'];
   final _minimumPadding = 5.0;
   var _currentItemSelected = '';
-  var _formKey =GlobalKey<FormState>();
+  var _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -60,9 +60,8 @@ class _SIFormState extends State<SIForm> {
                     style: textStyle,
                     keyboardType: TextInputType.number,
                     controller: principalController,
-                    validator: (String value){
-                      if(value.isEmpty)
-                        return 'Please Enter Principal Amount';
+                    validator: (String value) {
+                      if (value.isEmpty) return "Please Enter Principal Amount";
                     },
                     decoration: InputDecoration(
                         labelText: 'Principal',
@@ -82,8 +81,8 @@ class _SIFormState extends State<SIForm> {
                     style: textStyle,
                     keyboardType: TextInputType.number,
                     controller: roiController,
-                    validator: (String value){
-                      if(value.isEmpty)
+                    validator: (String value) {
+                      if (value.isEmpty)
                         return 'Please Enter The Rate of Intrest';
                     },
                     decoration: InputDecoration(
@@ -107,9 +106,8 @@ class _SIFormState extends State<SIForm> {
                         style: textStyle,
                         keyboardType: TextInputType.number,
                         controller: termController,
-                        validator: (String value){
-                          if(value.isEmpty)
-                            return 'Please Enter The Time';
+                        validator: (String value) {
+                          if (value.isEmpty) return 'Please Enter The Time';
                         },
                         decoration: InputDecoration(
                             labelText: 'Time',
@@ -157,30 +155,34 @@ class _SIFormState extends State<SIForm> {
                         ),
                         onPressed: () {
                           setState(() {
-
-                            if(_formKey.currentState.validate()) {
+                            if (_formKey.currentState.validate()) {
                               this.displayResult = _calculateTotalReturns();
                             }
-                            });
+                          });
                         },
                       )),
                       Container(
                         width: _minimumPadding * 5,
                       ),
                       Expanded(
-                          child: RaisedButton(
-                        color: Theme.of(context).primaryColorDark,
-                        textColor: Theme.of(context).primaryColorLight,
-                        child: Text(
-                          'Reset',
-                          textScaleFactor: 1.5,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            _reset();
-                          });
-                        },
-                      ))
+                          child:Container(
+                            
+                             child: RaisedButton(
+
+                                color: Theme.of(context).primaryColorDark,
+                                textColor: Theme.of(context).primaryColorLight,
+                                child: Text(
+                                  'Reset',
+                                  textScaleFactor: 1.5,
+                                ),
+                                onPressed: () {
+                                  setState(() {
+                                    _reset();
+                                  });
+                                },
+                              )
+
+                          ),),
                     ],
                   )),
               Padding(
