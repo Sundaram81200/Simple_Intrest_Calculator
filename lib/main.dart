@@ -6,9 +6,9 @@ void main() {
     home: SIForm(),
     debugShowCheckedModeBanner: false,
     theme: ThemeData(
-      brightness: Brightness.dark,
-      primaryColor: Colors.indigo,
-      accentColor: Colors.indigoAccent,
+      brightness: Brightness.light,
+      primaryColor: Colors.lightBlueAccent,
+      accentColor: Colors.lightBlueAccent,
     ),
   ));
 }
@@ -166,7 +166,7 @@ class _SIFormState extends State<SIForm> {
                       ),
                       Expanded(
                           child:Container(
-                            
+
                              child: RaisedButton(
 
                                 color: Theme.of(context).primaryColorDark,
